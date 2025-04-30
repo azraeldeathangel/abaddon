@@ -9,13 +9,8 @@
 int main() {
     unsigned char shellcode[] = "shellcode";
 
-    size_t shellcode_size = sizeof(shellcode) - 1;
-    unsigned char key[] = "keyhere";
-    size_t key_size = sizeof(key) - 1;
     DWORD old_protect;
     DWORD change_protect;
-
-    xor_decrypt(shellcode, shellcode_size, key, key_size);
     void* execute_memory;
 
     // VirtualAlloc
